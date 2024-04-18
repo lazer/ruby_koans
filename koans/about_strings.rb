@@ -129,7 +129,9 @@ EOS
   def test_single_quoted_strings_do_not_interpolate
     value = 123
     string = 'The value is #{value}'
-    assert_equal __, string
+    value = 456
+    lstring = 'The value is #{value}'
+    assert_equal lstring, string
   end
 
   def test_any_ruby_expression_may_be_interpolated
