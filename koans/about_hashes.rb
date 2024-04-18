@@ -36,11 +36,12 @@ class AboutHashes < Neo::Koan
     hash = { :one => "uno", :two => "dos" }
     hash[:one] = "eins"
 
-    expected = { :one => __, :two => "dos" }
-    assert_equal __, hash
+    expected = { :one => 'eins', :two => "dos" }
+    assert_equal expected, hash
 
     # Bonus Question: Why was "expected" broken out into a variable
     # rather than used as a literal?
+    # A: It would "confuse" the assert_equal shorthand invocation
   end
 
   def test_hash_is_unordered
