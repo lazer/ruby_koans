@@ -175,9 +175,9 @@ EOS
   end
 
   def test_strings_can_be_split_with_different_patterns
-    string = "the:rain:in:spain"
+    string = 'the:rain:in:spain'
     words = string.split(/:/)
-    assert_equal [__, __, __, __], words
+    assert_equal %w[the rain in spain], words
 
     # NOTE: Patterns are formed from Regular Expressions.  Ruby has a
     # very powerful Regular Expression library.  We will become
