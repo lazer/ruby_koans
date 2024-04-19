@@ -30,6 +30,13 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 # Your goal is to write the score method.
 
 def score(dice)
+  is_triple = dice.length == 3 && dice.uniq.length == 1
+  scores = Hash.new(0)
+  scores[1] = 100
+  scores[5] = 50
+  return 1000 if dice == [1,1,1]
+  return dice.first * 100 if is_triple
+  dice.inject(0) { |sum, d| sum + scores[d] }
   # You need to write this method
 end
 
