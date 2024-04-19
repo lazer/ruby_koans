@@ -113,7 +113,7 @@ class AboutMethods < Neo::Koan
   private :my_private_method
 
   def test_calling_private_methods_without_receiver
-    assert_equal __, my_private_method
+    assert_equal 'a secret', my_private_method
   end
 
   if before_ruby_version("2.7")   # https://github.com/edgecase/ruby_koans/issues/12
