@@ -29,8 +29,8 @@ class AboutKeywordArguments < Neo::Koan
   end
 
   def test_mandatory_keyword_arguments
-    assert_equal __, method_with_mandatory_keyword_arguments(one: 'one')
-    assert_equal __, method_with_mandatory_keyword_arguments(two: 2, one: 1)
+    assert_equal ["one", "two"], method_with_mandatory_keyword_arguments(one: 'one')
+    assert_equal [1, 2], method_with_mandatory_keyword_arguments(two: 2, one: 1)
   end
 
   def test_mandatory_keyword_arguments_without_mandatory_argument
