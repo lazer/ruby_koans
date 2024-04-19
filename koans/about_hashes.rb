@@ -118,10 +118,10 @@ class AboutHashes < Neo::Koan
   def test_default_value_attribute
     hash = Hash.new
 
-    assert_equal __, hash[:some_key]
+    assert_nil hash[:some_key]
 
     hash.default = 'peanut'
 
-    assert_equal __, hash[:some_key]
+    assert_equal 'peanut', hash[:some_key]
   end
 end
