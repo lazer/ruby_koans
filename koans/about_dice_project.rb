@@ -2,9 +2,17 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 # Implement a DiceSet Class here:
 #
-# class DiceSet
-#   code ...
-# end
+class DiceSet
+  attr_accessor :values
+
+  def initialize
+    @values = []
+  end
+  def roll(times=0)
+    @values = Array.new(times).map { |i| 1 + rand(5) }
+  end
+
+end
 
 class AboutDiceProject < Neo::Koan
   def test_can_create_a_dice_set
