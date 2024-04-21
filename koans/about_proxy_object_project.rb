@@ -24,6 +24,10 @@ class Proxy
     @messages.include?(name)
   end
 
+  def number_of_times_called(name)
+    @messages.select{|m| m ==name}.size
+  end
+
   def method_missing(name, *args)
     @messages << name
     @object.__send__(name, *args)
